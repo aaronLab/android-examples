@@ -32,15 +32,15 @@ class ResultActivity : AppCompatActivity() {
         when {
             bmi >= 23 ->
                 imageView.setImageResource(
-                    R.drawable.ic_baseline_sentiment_dissatisfied_24
+                    R.drawable.ic_baseline_sentiment_very_dissatisfied_24
                 )
             bmi >= 18.5 ->
                 imageView.setImageResource(
-                    R.drawable.ic_baseline_sentiment_very_dissatisfied_24
+                    R.drawable.ic_baseline_sentiment_satisfied_alt_24
                 )
             else ->
                 imageView.setImageResource(
-                    R.drawable.ic_baseline_sentiment_satisfied_alt_24
+                    R.drawable.ic_baseline_sentiment_dissatisfied_24
                 )
         }
 
