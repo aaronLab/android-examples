@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BmiCalculator</string>
+    <string name="resultBtn">결과</string>
+    <string name="weightText">몸무게</string>
+    <string name="heightText">키</string>
+</resources>
