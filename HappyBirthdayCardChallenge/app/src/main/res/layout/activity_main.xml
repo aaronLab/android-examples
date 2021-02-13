@@ -7,22 +7,24 @@
     tools:context=".MainActivity" >
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/img_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         app:srcCompat="@drawable/happy_birthday_card"
-        android:contentDescription="@string/happy_birthday_card" />
+        android:contentDescription="@string/str_happy_birthday_card_description" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/from_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="@dimen/default_margin"
-        android:layout_marginRight="@dimen/default_margin"
-        android:layout_marginBottom="@dimen/default_margin"
-        android:text="@string/from_aaron"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginRight="@dimen/margin_default"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:text="@string/str_from_who"
+        android:textColor="@color/color_black"
+        android:textSize="36sp" />
 </RelativeLayout>

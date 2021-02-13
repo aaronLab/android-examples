@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Happy Birthday Card Challenge</string>
-    <string name="from_aaron">from. Aaron</string>
-    <string name="happy_birthday_card">Happy Birthday Card</string>
+    <string name="str_from_who">from. Aaron</string>
+    <string name="str_happy_birthday_card_description">Happy Birthday Card Image</string>
 </resources>
