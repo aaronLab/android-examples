@@ -29,16 +29,17 @@ class MainActivity : AppCompatActivity() {
      */
     private fun getDefinition() {
 
+        val url = getURL()
         val queue = Volley.newRequestQueue(this)
-
-        val apiKey = API.KEY
-        val word = word_edit_text.text
-        val url = "https://www.dictionaryapi.com/api/v3/references/learners/json/$word?key=$apiKey"
 
         val stringRequest = StringRequest(Request.Method.GET, url,
                 Response.Listener { response ->
 
-                    extractDefinition(response)
+                    try {
+                        extractDefinition(response)
+                    } catch (e: Exception) {
+                        Toast.makeText(this, response.toString(), Toast.LENGTH_SHORT).show()
+                    }
 
                 },
 
@@ -52,6 +53,16 @@ class MainActivity : AppCompatActivity() {
 
         // Request
         queue.add(stringRequest)
+    }
+
+    /*
+    request 반환
+     */
+    private fun getURL(): String {
+        val apiKey = API.KEY
+        val word = word_edit_text.text
+        val url = "https://www.dictionaryapi.com/api/v3/references/learners/json/$word?key=$apiKey"
+        return url
     }
 
     /*
