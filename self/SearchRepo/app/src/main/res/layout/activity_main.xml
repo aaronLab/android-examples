@@ -23,6 +23,8 @@
         android:layout_marginEnd="@dimen/margin_eight"
         android:layout_marginRight="@dimen/margin_eight"
         android:hint="@string/str_search_here"
+        android:importantForAutofill="no"
+        android:inputType="text"
         android:maxLines="1"
         app:layout_constraintBottom_toBottomOf="@+id/btn_search"
         app:layout_constraintLeft_toLeftOf="parent"
