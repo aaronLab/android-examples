@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">My News</string>
-    <string name="str_ko_search">검색</string>
-    <string name="str_kr_news_list">News 목록</string>
-    <string name="str_kr_news_search">News 검색</string>
-    <string name="str_kr_search_hint">검색어 입력</string>
-</resources>
