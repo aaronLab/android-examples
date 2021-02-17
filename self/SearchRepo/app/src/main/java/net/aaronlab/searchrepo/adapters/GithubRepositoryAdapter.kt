@@ -1,4 +1,4 @@
-package net.aaronlab.searchrepo
+package net.aaronlab.searchrepo.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,6 +8,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
+import net.aaronlab.searchrepo.R
 import net.aaronlab.searchrepo.viewholders.GithubRepositoryItemHolder
 import net.aaronlab.searchrepo.models.GithubRepositoryModel
 
@@ -52,7 +53,11 @@ class GithubRepositoryAdapter(private var repositories: List<GithubRepositoryMod
     }
 
     private fun getDiffResult(updated: List<GithubRepositoryModel>): DiffUtil.DiffResult {
-        val diffCallback = GithubRepositoryDiffCallback(repositories, updated)
+        val diffCallback =
+            GithubRepositoryDiffCallback(
+                repositories,
+                updated
+            )
         return DiffUtil.calculateDiff(diffCallback)
     }
 

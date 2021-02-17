@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.repo_cell.view.*
-import net.aaronlab.searchrepo.GithubRepositoryAdapter
+import net.aaronlab.searchrepo.adapters.GithubRepositoryAdapter
 import net.aaronlab.searchrepo.models.GithubRepositoryModel
 
 /*
