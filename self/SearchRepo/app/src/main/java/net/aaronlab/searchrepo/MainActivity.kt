@@ -5,6 +5,8 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
+import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
@@ -23,28 +25,21 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewModelFactory: MainViewModelFactory
     private lateinit var mGithubRepositoryAdapter: GithubRepositoryAdapter
 
+    // 뷰 생성
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         initButton()
+        initKeyboard()
+
         initViewModel()
     }
 
-    // 버튼 리스너 초기화
-    private fun initButton() {
-        btn_search.setOnClickListener {
-            onSearchClick()
-        }
-    }
-
-    // 검색 튼 액션
-    private fun onSearchClick() {
-        edit_text_search_query.run {
-            viewModel.requestGithubRepositories(edit_text_search_query.text.toString())
-            text.clear()
-            hideKeyboard()
-        }
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        // EditText 이외 터치 시 키보드 닫기
+        hideKeyboard()
+        return super.dispatchTouchEvent(ev)
     }
 
     // 키보드 숨기기
@@ -52,6 +47,35 @@ class MainActivity : AppCompatActivity() {
         currentFocus?.run {
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
             imm?.hideSoftInputFromWindow(windowToken, 0)
+        }
+    }
+
+    // 버튼 리스너 초기화
+    private fun initButton() {
+        btn_search.setOnClickListener {
+            search()
+        }
+    }
+
+    // EditText 리스너 초기화
+    private fun initKeyboard() {
+        edit_text_search_query.setOnKeyListener { v, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
+                search()
+
+                return@setOnKeyListener true
+            }
+            false
+        }
+    }
+
+    // 검색
+    private fun search() {
+        edit_text_search_query.run {
+            viewModel.requestGithubRepositories(edit_text_search_query.text.toString())
+            text.clear()
+            clearFocus()
+            hideKeyboard()
         }
     }
 
