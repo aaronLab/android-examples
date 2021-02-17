@@ -1,4 +1,4 @@
-package net.aaronlab.searchrepo.viewmodels
+package net.aaronlab.searchrepo.viewmodels.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
