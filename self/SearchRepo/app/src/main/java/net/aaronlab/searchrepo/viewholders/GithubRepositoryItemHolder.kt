@@ -1,5 +1,6 @@
-package net.aaronlab.searchrepo.itemholders
+package net.aaronlab.searchrepo.viewholders
 
+import android.graphics.Rect
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -38,6 +39,26 @@ class GithubRepositoryItemHolder(
             descriptionView.text = description
             starCountView.text = "Stars: $starGazersCount"
         }
+    }
+
+}
+
+/*
+RecyclerView 에서 아이템 간의 여백 등을 위해서
+ItemDecoration 을 상속받는 클래스가 필요
+ */
+
+class GithubRepositoryItemDecoration(private val top: Int, private val bottom: Int): RecyclerView.ItemDecoration() {
+
+    override fun getItemOffsets(
+        outRect: Rect,
+        view: View,
+        parent: RecyclerView,
+        state: RecyclerView.State
+    ) {
+        super.getItemOffsets(outRect, view, parent, state)
+        outRect.top = top
+        outRect.bottom = bottom
     }
 
 }
