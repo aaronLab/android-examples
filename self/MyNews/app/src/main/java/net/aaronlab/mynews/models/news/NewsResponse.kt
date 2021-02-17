@@ -2,6 +2,9 @@ package net.aaronlab.mynews.models.news
 
 import com.google.gson.annotations.SerializedName
 
+/*
+뉴스 조회 리스폰스
+ */
 data class NewsResponse(
 
     @SerializedName("status")
