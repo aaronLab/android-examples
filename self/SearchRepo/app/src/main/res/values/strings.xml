@@ -2,4 +2,5 @@
     <string name="app_name">SearchRepo</string>
     <string name="str_search">Search</string>
     <string name="str_search_here">Search here...</string>
+    <string name="repository_cell_avatar">Repository Cell Avatar</string>
 </resources>

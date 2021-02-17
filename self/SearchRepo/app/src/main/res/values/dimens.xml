@@ -3,4 +3,10 @@
     <dimen name="padding_sixteen">16dp</dimen>
     <dimen name="dimens_zero">0dp</dimen>
     <dimen name="margin_eight">8dp</dimen>
+    <dimen name="margin_four">4dp</dimen>
+    <dimen name="radius_eight">8dp</dimen>
+    <dimen name="elevation_two">2dp</dimen>
+    <dimen name="padding_eight">8dp</dimen>
+    <dimen name="size_repo_cell_img">36dp</dimen>
+    <dimen name="text_sixteen">16sp</dimen>
 </resources>
