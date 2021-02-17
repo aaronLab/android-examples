@@ -8,6 +8,9 @@ import kotlinx.coroutines.launch
 import net.aaronlab.searchrepo.models.GithubRepositoryModel
 import net.aaronlab.searchrepo.repositories.GithubRepository
 
+/*
+View Model
+ */
 class MainViewModel(private val githubRepository: GithubRepository): ViewModel() {
 
     private val _githubRepositories = MutableLiveData<List<GithubRepositoryModel>>()
