@@ -61,6 +61,8 @@ class GithubRepositoryAdapter(private var repositories: List<GithubRepositoryMod
         return DiffUtil.calculateDiff(diffCallback)
     }
 
+    fun getItem(position: Int) = repositories[position]
+
 }
 
 /*
