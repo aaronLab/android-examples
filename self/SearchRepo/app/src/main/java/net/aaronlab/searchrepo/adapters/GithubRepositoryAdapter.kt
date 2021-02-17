@@ -50,6 +50,8 @@ class GithubRepositoryAdapter(private var repositories: List<GithubRepositoryMod
 
         }
 
+        notifyDataSetChanged() // Recycler View 갱신
+
     }
 
     private fun getDiffResult(updated: List<GithubRepositoryModel>): DiffUtil.DiffResult {

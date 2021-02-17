@@ -17,6 +17,7 @@ class MainViewModel(private val githubRepository: GithubRepository): ViewModel()
     val githubRepositories = _githubRepositories
 
     fun requestGithubRepositories(query: String) {
+
         CoroutineScope(Dispatchers.IO).launch {
 
             githubRepository.getRepositories(query)?.let { response ->

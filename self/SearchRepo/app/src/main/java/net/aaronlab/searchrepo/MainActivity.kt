@@ -61,21 +61,13 @@ class MainActivity : AppCompatActivity() {
     private fun initKeyboard() {
         edit_text_search_query.setOnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
+
+                hideKeyboard()
                 search()
 
                 return@setOnKeyListener true
             }
             false
-        }
-    }
-
-    // 검색
-    private fun search() {
-        edit_text_search_query.run {
-            viewModel.requestGithubRepositories(edit_text_search_query.text.toString())
-            text.clear()
-            clearFocus()
-            hideKeyboard()
         }
     }
 
@@ -88,6 +80,16 @@ class MainActivity : AppCompatActivity() {
 
             updateRepositories(it)
 
+        }
+    }
+
+    // 검색
+    private fun search() {
+        edit_text_search_query.run {
+            viewModel.requestGithubRepositories(edit_text_search_query.text.toString())
+            text.clear()
+            clearFocus()
+            hideKeyboard()
         }
     }
 
