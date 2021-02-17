@@ -1,4 +1,4 @@
-package net.aaronlab.mynews.service
+package net.aaronlab.mynews.core.service
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
