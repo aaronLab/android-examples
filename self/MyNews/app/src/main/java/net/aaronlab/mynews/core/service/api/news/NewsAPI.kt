@@ -1,10 +1,14 @@
-package net.aaronlab.mynews.core.service.api
+package net.aaronlab.mynews.core.service.api.news
 
+import net.aaronlab.mynews.core.service.api.APIKey
 import net.aaronlab.mynews.models.news.NewsResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+/*
+뉴스 API
+ */
 interface NewsAPI {
 
     /*
