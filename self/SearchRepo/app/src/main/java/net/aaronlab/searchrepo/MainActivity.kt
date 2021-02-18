@@ -87,7 +87,6 @@ class MainActivity : AppCompatActivity() {
     private fun search() {
         edit_text_search_query.run {
             viewModel.requestGithubRepositories(edit_text_search_query.text.toString())
-            text.clear()
             clearFocus()
             hideKeyboard()
         }
